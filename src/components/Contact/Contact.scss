@@ -1,0 +1,81 @@
+.contact-content {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-description {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  margin-bottom: 3rem;
+}
+
+.contact-methods {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-method {
+  padding: 1.5rem;
+}
+
+.contact-icon {
+  color: #a78bfa;
+  margin: 0 auto 1rem;
+}
+
+.contact-method-title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-link {
+  color: #a78bfa;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: #ddd6fe;
+  }
+}
+
+.contact-info {
+  color: #cbd5e1;
+}
+
+.contact-cta {
+  background: linear-gradient(to right, #7c3aed, #db2777);
+  padding: 2rem;
+  color: white;
+}
+
+.cta-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.cta-description {
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  color: #7c3aed;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: #f1f5f9;
+  }
+}

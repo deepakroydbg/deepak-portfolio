@@ -1,0 +1,58 @@
+.education-grid {
+  display: grid;
+  gap: 2rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.education-card {
+  padding: 1.5rem;
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  
+  .icon-purple {
+    color: #a78bfa;
+  }
+}
+
+.education-level {
+  color: #ddd6fe;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.education-degree {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.education-field {
+  color: #f472b6;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.education-institution {
+  color: #cbd5e1;
+  margin-bottom: 0.25rem;
+}
+
+.education-university {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.education-year {
+  color: #a78bfa;
+  font-weight: 600;
+}

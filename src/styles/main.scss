@@ -1,0 +1,280 @@
+// Variables
+$primary-color: #007acc;
+$accent-color: #1c1c1e;
+$bg-light: #f7f9fc;
+$text-dark: #1a1a1a;
+$text-light: #555;
+$border-color: #e0e0e0;
+$transition: all 0.3s ease;
+
+// Global Styles
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: $bg-light;
+  color: $text-dark;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+// Updated Variables
+$primary-color: #007acc;
+$accent-color: #1c1c1e;
+$bg-light: #f7f9fc;
+$text-dark: #1a1a1a;
+$text-light: #555;
+$border-color: #e0e0e0;
+$transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$box-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.08);
+
+// Header Styles
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: $box-shadow;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: none;
+  
+  h1 {
+    font-size: 1.8rem;
+    color: $accent-color;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, $primary-color, darken($primary-color, 15%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: $transition;
+    
+    &:hover {
+      letter-spacing: 0px;
+    }
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    
+    a {
+      position: relative;
+      text-decoration: none;
+      color: $text-dark;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      transition: $transition;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $primary-color;
+        transition: $transition;
+      }
+      
+      &:hover {
+        color: $primary-color;
+        
+        &::after {
+          width: 100%;
+        }
+      }
+      
+      &.active {
+        color: $primary-color;
+        
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    
+    nav {
+      width: 100%;
+      justify-content: space-around;
+      gap: 0.5rem;
+      
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Hero
+.hero {
+  text-align: center;
+  padding: 80px 0;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: $accent-color;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: $text-light;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  a {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 12px 30px;
+    background: $primary-color;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: $transition;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Section styling
+section {
+  padding: 60px 0;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: $accent-color;
+    border-bottom: 2px solid $primary-color;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $text-light;
+    line-height: 1.6;
+  }
+}
+
+// Skills
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    background: white;
+    border: 1px solid $border-color;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: $transition;
+
+    &:hover {
+      background: $primary-color;
+      color: white;
+    }
+  }
+}
+
+// Projects
+.project {
+  background: white;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  h3 {
+    color: $accent-color;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $text-light;
+  }
+}
+
+// Contact
+.contact a {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Footer
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.95rem;
+  color: $text-light;
+  border-top: 1px solid $border-color;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    nav {
+      margin-top: 10px;
+
+      a {
+        margin-left: 0;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .skills ul {
+    justify-content: center;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+}

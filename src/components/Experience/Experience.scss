@@ -1,0 +1,163 @@
+.experience-timeline {
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #a855f7, #ec4899);
+  
+  @media (min-width: 768px) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.experiences-list {
+  position: relative;
+  z-index: 10;
+}
+
+.experience-item {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 3rem;
+  
+  @media (min-width: 768px) {
+    padding-left: 0;
+    width: 50%;
+    
+    &:nth-child(odd) {
+      padding-right: 3rem;
+      margin-left: auto;
+    }
+    
+    &:nth-child(even) {
+      padding-left: 3rem;
+      margin-right: auto;
+    }
+  }
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 1.5rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  border-radius: 50%;
+  border: 4px solid #0f172a;
+  
+  @media (min-width: 768px) {
+    left: auto;
+    
+    .experience-item:nth-child(odd) & {
+      right: -2.5rem;
+    }
+    
+    .experience-item:nth-child(even) & {
+      left: -2.5rem;
+    }
+  }
+}
+
+.experience-card {
+  padding: 2rem;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  color: #a78bfa;
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.location-period {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.client {
+  color: #f472b6;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.duration {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.experience-icon .icon-purple {
+  color: #a78bfa;
+}
+
+.tech-stack {
+  margin-bottom: 1.5rem;
+  
+  h4 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: linear-gradient(to right, rgba(126, 34, 206, 0.3), rgba(219, 39, 119, 0.3));
+  color: #ddd6fe;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  border: 1px solid rgba(126, 34, 206, 0.5);
+}
+
+.achievements {
+  h4 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+  }
+  
+  .chevron-icon {
+    color: #a78bfa;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+}
