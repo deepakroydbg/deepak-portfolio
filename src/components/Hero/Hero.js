@@ -29,7 +29,17 @@ const Hero = ({ scrollToSection }) => {
               <Mail size={20} />
               Get In Touch
             </a>
-            <button className="btn btn-secondary">
+            <button
+              className="btn btn-secondary"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/Deepak-Exp-3.5years-Resume.pdf";
+                link.download = "Deepak-Exp-3.5years-Resume.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
               <Download size={20} />
               Download CV
             </button>

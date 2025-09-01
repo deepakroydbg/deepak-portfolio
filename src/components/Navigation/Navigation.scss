@@ -1,25 +1,21 @@
 .navigation {
-  box-sizing: border-box;
   position: fixed;
   top: 0;
-  width: 98.5%;
-  z-index: 50;
-  overflow-x: hidden;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(15, 23, 42, 1);
+  z-index: 1000;
   transition: all 0.3s ease;
-   background-color: rgba(15, 23, 42, 1);
-  
+
   &.scrolled {
     background-color: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
 }
- @media (max-width: 640px) {
-    .navigation{
-     width:96% !important;
-    }
-    
-  }
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -27,12 +23,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
-  
+  height: 100%;
+
   @media (min-width: 640px) {
     padding: 0 1.5rem;
   }
- 
+
   @media (min-width: 1024px) {
     padding: 0 2rem;
   }
@@ -42,38 +38,19 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
-  
+  z-index: 1002;
+
   .brand-accent {
     color: #a78bfa;
   }
 }
 
-.nav-menu {
-  &.desktop {
-    display: none;
-    
-    @media (min-width: 768px) {
-      display: flex;
-      gap: 2rem;
-    }
-  }
-  
-  &.mobile {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(30, 41, 59, 0.95);
-    backdrop-filter: blur(8px);
-    border-radius: 0.5rem;
-    margin: 0 1rem;
-    padding: 1rem;
+.nav-menu.desktop {
+  display: none;
+
+  @media (min-width: 768px) {
     display: flex;
-    flex-direction: column;
-    
-    @media (min-width: 768px) {
-      display: none;
-    }
+    gap: 2rem;
   }
 }
 
@@ -82,37 +59,149 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: #cbd5e1;
-  transition: color 0.2s ease;
   background: none;
   border: none;
   cursor: pointer;
-  
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+
   &:hover {
     color: white;
+    background-color: rgba(255, 255, 255, 0.1);
   }
-  
+
   &.active {
     color: #a78bfa;
-  }
-  
-  .nav-menu.mobile & {
-    text-align: left;
-    // padding: 0.5rem 1rem;
-    width: 100%;
-    
-    &:hover {
-      color: #a78bfa;
-    }
+    background-color: rgba(167, 139, 250, 0.1);
   }
 }
 
 .mobile-menu-toggle {
+  display: block;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
-  
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  z-index: 1002;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
   @media (min-width: 768px) {
     display: none;
+  }
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-menu-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mobile-menu-content {
+  position: absolute;
+  top: 64px;
+  left: 1rem;
+  right: 1rem;
+  background-color: rgba(30, 41, 59, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobile-nav-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+  }
+
+  &.active {
+    color: #a78bfa;
+    background-color: rgba(167, 139, 250, 0.15);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-brand {
+    font-size: 1.25rem;
+    
+  }
+
+  .mobile-menu-content {
+    left: 0.5rem;
+    right: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 0.95rem;
+    padding: 0.875rem;
+  }
+}
+
+// Ensure menu works on very small screens
+@media (max-width: 320px) {
+  .mobile-menu-content {
+    left: 0.25rem;
+    right: 0.25rem;
   }
 }

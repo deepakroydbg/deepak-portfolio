@@ -68,7 +68,14 @@
 .experience-card {
   padding: 2rem;
 }
-
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 2rem;
+  }
+  .experience-item {
+      padding-left: 0rem;
+  }
+}
 .experience-header {
   display: flex;
   justify-content: space-between;
